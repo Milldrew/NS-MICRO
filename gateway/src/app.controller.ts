@@ -1,4 +1,11 @@
-import { Controller, Get, Post, Request, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Param,
+  Post,
+  Request,
+  UseGuards,
+} from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { AppService } from './app.service';
 import { AuthService } from './auth/auth.service';
@@ -22,5 +29,11 @@ export class AppController {
   @Get('/')
   getRoot(@Request() req) {
     return req.user;
+  }
+
+  @Get('survey/:action')
+  getSurveys(@Param('action') action: string) {
+    console.log(action);
+    return this.appService.getSurveys(action);
   }
 }

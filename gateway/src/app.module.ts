@@ -5,10 +5,20 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
+import { ClientsModule, Transport } from '@nestjs/microservices';
 
 @Module({
   imports: [
     UserModule,
+    ClientsModule.register([
+      {
+        name: 'SURVEY_SERVICE',
+        transport: Transport.TCP,
+        options: {
+          port: +process.env.SURVEY_PORT,
+        },
+      },
+    ]),
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'postgres',
