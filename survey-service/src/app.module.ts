@@ -1,10 +1,11 @@
+import { ConfigModule } from '@nestjs/config';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { SurveyModule } from './survey/survey.module';
 
 @Module({
-  imports: [SurveyModule],
+  imports: [ConfigModule.forRoot(), SurveyModule],
   controllers: [AppController],
   providers: [AppService],
 })
