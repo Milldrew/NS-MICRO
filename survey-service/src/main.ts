@@ -14,7 +14,6 @@ async function bootstrap() {
     },
   );
   await app.listen();
-  console.log(process.env.SURVEY_PORT);
   console.log(PORT);
 }
 bootstrap();
