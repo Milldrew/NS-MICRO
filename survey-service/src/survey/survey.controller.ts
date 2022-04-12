@@ -1,7 +1,16 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { SurveyService } from './survey.service';
 import { CreateSurveyDto } from './dto/create-survey.dto';
 import { UpdateSurveyDto } from './dto/update-survey.dto';
+import { EventPattern } from '@nestjs/microservices';
 
 @Controller('survey')
 export class SurveyController {
@@ -12,7 +21,7 @@ export class SurveyController {
     return this.surveyService.create(createSurveyDto);
   }
 
-  @Get()
+  @EventPattern('all-surveys')
   findAll() {
     return this.surveyService.findAll();
   }
