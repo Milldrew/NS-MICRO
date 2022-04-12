@@ -21,8 +21,8 @@ export class UserService {
     const user = this.userRepo.findOneBy({ username });
     if (!user) {
       throw new NotFoundException(`User ${username} not found`);
-      return user;
     }
+    return user;
   }
 
   findOne(id: number) {
