@@ -9,6 +9,7 @@ export class AppService {
   }
 
   getSurveys(action: string) {
-    return { payload: action };
+    console.log('before emit');
+    this.client.emit('all_surveys', action);
   }
 }

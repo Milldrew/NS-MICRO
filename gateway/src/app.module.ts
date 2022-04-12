@@ -9,6 +9,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     UserModule,
     ClientsModule.register([
       {
@@ -19,7 +20,6 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         },
       },
     ]),
-    ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: process.env.DATABASE_HOST,

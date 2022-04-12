@@ -33,7 +33,6 @@ export class AppController {
 
   @Get('survey/:action')
   getSurveys(@Param('action') action: string) {
-    console.log(action);
     return this.appService.getSurveys(action);
   }
 }

@@ -1,1 +1,2 @@
-curl http://localhost:3000/survey
+ACTION=$1
+curl http://localhost:3000/survey/$1
