@@ -21,7 +21,7 @@ export class SurveyController {
     return this.surveyService.create(createSurveyDto);
   }
 
-  @EventPattern('all-surveys')
+  @EventPattern('all_surveys')
   findAll() {
     return this.surveyService.findAll();
   }
