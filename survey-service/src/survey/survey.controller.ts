@@ -21,7 +21,6 @@ export class SurveyController {
     return this.surveyService.create(createSurveyDto);
   }
 
-  @EventPattern('all_surveys')
   findAll(action: string) {
     console.log(action);
     return this.surveyService.findAll();
