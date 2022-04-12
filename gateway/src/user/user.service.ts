@@ -17,6 +17,10 @@ export class UserService {
     return this.userRepo.find();
   }
 
+  async findOneByUsername(username: string) {
+    const user = this.userRepo.findOneBy({ username });
+  }
+
   findOne(id: number) {
     return `This action returns a #${id} user`;
   }
