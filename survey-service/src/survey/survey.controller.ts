@@ -22,8 +22,8 @@ export class SurveyController {
   }
   @MessagePattern({ cmd: 'findAll' })
   @EventPattern('all_surveys')
-  findAll(action: string) {
-    console.log(action);
+  async findAll(data: null): Promise<any> {
+    console.log('after emit');
     return this.surveyService.findAll();
   }
 

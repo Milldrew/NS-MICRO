@@ -6,7 +6,6 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @EventPattern('all_surveys')
   async getHello() {
     console.log('after emit');
     return this.appService.getHello();

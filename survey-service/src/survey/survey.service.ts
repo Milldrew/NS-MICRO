@@ -9,7 +9,7 @@ export class SurveyService {
   }
 
   findAll() {
-    return `This action returns all survey`;
+    return [];
   }
 
   findOne(id: number) {
