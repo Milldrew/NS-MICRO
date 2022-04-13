@@ -7,16 +7,16 @@ import { UpdateSurveyDto } from './dto/update-survey.dto';
 export class SurveyService {
   constructor(@Inject('SURVEY_SERVICE') private client: ClientProxy) {}
 
-  create(createSurveyDto: CreateSurveyDto) {
-    return 'This action adds a new survey';
+  async create(createSurveyDto: CreateSurveyDto) {
+    return await this.client.send<CreateSurveyDto>(
+      { cmd: 'createSurvey' },
+      createSurveyDto,
+    );
   }
 
   async findAll() {
-    let all: any;
-    console.log('before emit all_surveys');
-    //this.client.emit('all_surveys', 'data');
     return await this.client
-      .send<string>({ cmd: 'findAll' }, 'data')
+      .send<any>({ cmd: 'findAll' }, 'findAll')
       .toPromise();
   }
 
