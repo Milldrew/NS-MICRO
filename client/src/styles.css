@@ -22,7 +22,7 @@ app-root {
   align-items: center;
   height: 100%;
   width: 100%;
-  background-color: var(--dark-gray);
-  color: var(--light-gray);
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
   font-family: Arial, Helvetica, sans-serif;
 }

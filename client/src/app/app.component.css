@@ -1,6 +1,6 @@
 header {
-  background-color: var(--light-gray);
-  color: var(--dark-gray);
+  background-color: var(--gray);
+  color: var(--light-gray);
   height: 3vh;
   width: 100%;
 }
@@ -11,5 +11,5 @@ h1 {
 main {
   height: 90%;
   width: 80%;
-  background-color: var(--gray);
+  background-color: var(--dark-gray);
 }
