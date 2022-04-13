@@ -1,15 +1,22 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { CreateSurveyDto } from './dto/create-survey.dto';
 import { UpdateSurveyDto } from './dto/update-survey.dto';
+import { Survey } from './entities/survey.entity';
 
 @Injectable()
 export class SurveyService {
+  constructor(
+    @InjectRepository(Survey) private readonly surveyRepo: Repository<Survey>,
+  ) {}
   create(createSurveyDto: CreateSurveyDto) {
-    return 'This action adds a new survey';
+    console.log('hello from create');
+    return this.surveyRepo.create(createSurveyDto);
   }
 
   findAll() {
-    return [];
+    return this.surveyRepo.find();
   }
 
   findOne(id: number) {
