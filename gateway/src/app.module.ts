@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { SurveyModule } from './survey/survey.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
       synchronize: true,
     }),
     AuthModule,
+    SurveyModule,
   ],
   controllers: [AppController],
   providers: [AppService],
