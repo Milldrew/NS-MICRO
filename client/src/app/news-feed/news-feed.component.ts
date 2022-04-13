@@ -10,6 +10,12 @@ export class NewsFeedComponent implements OnInit {
   constructor(private surveyFeed: SurveyFeedService) {}
 
   ngOnInit(): void {
-    this.surveyFeed.listen('message');
+    console.log('newfeed init top');
+    this.surveyFeed.emit('message', 'hello');
+    this.surveyFeed.listen('message').subscribe((data) => {
+      console.log(data);
+    });
+
+    console.log('newfeed init bottom');
   }
 }
