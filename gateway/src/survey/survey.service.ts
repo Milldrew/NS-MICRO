@@ -11,11 +11,13 @@ export class SurveyService {
     return 'This action adds a new survey';
   }
 
-  findAll() {
+  async findAll() {
+    let all: any;
     console.log('before emit all_surveys');
-    this.client.emit('all_surveys', 'data');
-    this.client.send<string>({ cmd: 'findAll' }, 'data');
-    return `This action returns all survey`;
+    //this.client.emit('all_surveys', 'data');
+    return await this.client
+      .send<string>({ cmd: 'findAll' }, 'data')
+      .toPromise();
   }
 
   findOne(id: number) {
