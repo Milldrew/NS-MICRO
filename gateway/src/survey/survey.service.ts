@@ -28,7 +28,7 @@ export class SurveyService {
     return `This action updates a #${id} survey`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} survey`;
+  async remove(id: number) {
+    return await this.client.send({ cmd: 'removeSurvey' }, id);
   }
 }

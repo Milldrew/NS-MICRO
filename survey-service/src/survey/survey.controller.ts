@@ -16,14 +16,12 @@ import { EventPattern, MessagePattern } from '@nestjs/microservices';
 export class SurveyController {
   constructor(private readonly surveyService: SurveyService) {}
 
-  @Post()
+  @MessagePattern({ cmd: 'createSurvey' })
   create(@Body() createSurveyDto: CreateSurveyDto) {
     return this.surveyService.create(createSurveyDto);
   }
   @MessagePattern({ cmd: 'findAll' })
-  @EventPattern('all_surveys')
   async findAll(data: null): Promise<any> {
-    console.log('after emit');
     return this.surveyService.findAll();
   }
 
@@ -37,8 +35,8 @@ export class SurveyController {
     return this.surveyService.update(+id, updateSurveyDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
+  @MessagePattern({ cmd: 'removeSurvey' })
+  remove(id: number) {
     return this.surveyService.remove(+id);
   }
 }

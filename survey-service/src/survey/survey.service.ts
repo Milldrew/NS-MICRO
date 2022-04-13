@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateSurveyDto } from './dto/create-survey.dto';
@@ -12,7 +12,8 @@ export class SurveyService {
   ) {}
   create(createSurveyDto: CreateSurveyDto) {
     console.log('hello from create');
-    return this.surveyRepo.create(createSurveyDto);
+    const survey = this.surveyRepo.create(createSurveyDto);
+    return this.surveyRepo.save(survey);
   }
 
   findAll() {
@@ -27,7 +28,11 @@ export class SurveyService {
     return `This action updates a #${id} survey`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} survey`;
+  async remove(id: number) {
+    const survey = await this.surveyRepo.findOneBy({ id });
+    if (!survey) {
+      throw new NotFoundException(`survey ${id} not found`);
+    }
+    return this.surveyRepo.remove(survey);
   }
 }
