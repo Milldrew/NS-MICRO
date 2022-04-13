@@ -1,0 +1,15 @@
+header {
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+  height: 3vh;
+  width: 100%;
+}
+h1 {
+  width: 100%;
+  text-align: center;
+}
+main {
+  height: 90%;
+  width: 80%;
+  background-color: var(--gray);
+}
