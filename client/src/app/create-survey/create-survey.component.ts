@@ -13,7 +13,6 @@ export class CreateSurveyComponent implements OnInit {
     private readonly surveyApi: CreateSurveyService
   ) {}
   createSurveyForm = this.fb.group({
-    surveyName: [''],
     question: [''],
     answers: this.fb.array([this.fb.control('')]),
   });
@@ -53,7 +52,7 @@ export class CreateSurveyComponent implements OnInit {
   }
 
   createSurvey() {
-    this.surveyApi.addSurvey();
+    this.surveyApi.addSurvey({ authorId: 1, ...this.createSurveyForm.value });
   }
   ngOnInit(): void {}
 }

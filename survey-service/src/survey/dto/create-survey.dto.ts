@@ -1,1 +1,5 @@
-export class CreateSurveyDto {}
+export class CreateSurveyDto {
+  authorId: number;
+  question: string;
+  answers: string[];
+}

@@ -8,7 +8,7 @@ export class Survey {
   @Column()
   authorId: number;
   @Column()
-  name: string;
+  question: string;
   @Column('json')
   answers: string[];
   @OneToMany((type) => Response, (response) => response.surveyId)

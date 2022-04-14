@@ -4,7 +4,7 @@ export class CreateSurveyDto {
   @IsNumber()
   authorId: number;
   @IsString()
-  name: string;
+  question: string;
   @IsString({ each: true })
   answers: string[];
 }

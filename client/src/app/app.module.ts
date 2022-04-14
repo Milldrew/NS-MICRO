@@ -17,7 +17,6 @@ import { NewsFeedModule } from './news-feed/news-feed.module';
     NewsFeedModule,
     CreateSurveyModule,
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

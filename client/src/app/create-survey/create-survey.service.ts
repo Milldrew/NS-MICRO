@@ -1,10 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { ConstantsService } from '../services/constants.service';
 
 type CreateSurveyDto = {
   authorId: number;
   name: string;
+  question: string;
   answers: string[];
 };
 @Injectable({
@@ -15,10 +16,18 @@ export class CreateSurveyService {
     private readonly constants: ConstantsService,
     private http: HttpClient
   ) {}
-  addSurvey() {
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  };
+  addSurvey(createSurveyDto: CreateSurveyDto) {
     console.log(this.constants.surveyUrl);
+    console.log(createSurveyDto);
     return this.http
-      .post(this.constants.surveyUrl, { foo: 'foo' })
+      .post<CreateSurveyDto>(
+        this.constants.surveyUrl,
+        createSurveyDto,
+        this.httpOptions
+      )
       .subscribe((value) => console.log(value));
   }
 }
