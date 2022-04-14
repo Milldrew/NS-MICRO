@@ -4,9 +4,12 @@
   <input id="survey-name" type="text" formControlName="surveyName" />
   <label for="question">Question:</label>
   <input id="question" type="text" formControlName="question" />
-  <div *ngFor="let answer of answers.controls; let i = index">
+  <div
+    *ngFor="let answer of answers.controls; let i = index"
+    formArrayName="answers"
+  >
     <label for="answer-{{ i }}">Answer {{ answerLetters[i] }}:</label>
-    <input id="answer-{{ i }}" type="text" formControlName="answer" />
+    <input id="answer-{{ i }}" type="text" [formControlName]="i" />
   </div>
   <button (click)="addAnswer()">Add Answer</button>
 </form>

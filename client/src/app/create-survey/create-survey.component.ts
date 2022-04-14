@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormArray } from '@angular/forms';
+import { CreateSurveyService } from './create-survey.service';
 
 @Component({
   selector: 'app-create-survey',
@@ -7,7 +8,10 @@ import { FormBuilder, FormArray } from '@angular/forms';
   styleUrls: ['./create-survey.component.css'],
 })
 export class CreateSurveyComponent implements OnInit {
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private readonly surveyApi: CreateSurveyService
+  ) {}
   createSurveyForm = this.fb.group({
     surveyName: [''],
     question: [''],
@@ -48,5 +52,8 @@ export class CreateSurveyComponent implements OnInit {
     this.answers.push(this.fb.control(''));
   }
 
+  createSurvey() {
+    //    this.surveyApi.addSurvey();
+  }
   ngOnInit(): void {}
 }
