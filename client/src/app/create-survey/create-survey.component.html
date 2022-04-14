@@ -12,6 +12,7 @@
     <input id="answer-{{ i }}" type="text" [formControlName]="i" />
   </div>
   <button (click)="addAnswer()">Add Answer</button>
+  <button (click)="createSurvey()">Submit New Survey</button>
 </form>
 <footer></footer>
 {{ createSurveyForm.value | json }}
