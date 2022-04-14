@@ -1,14 +1,15 @@
 header {
   background-color: var(--gray);
   color: var(--light-gray);
-  height: 3vh;
   width: 100%;
 }
 h1 {
-  width: 100%;
   text-align: center;
 }
 main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 90%;
   width: 80%;
   background-color: var(--dark-gray);

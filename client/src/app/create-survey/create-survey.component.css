@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 80%;
+  border: 1px solid red;
+  background-color: var(--gray);
+  padding-bottom: 100px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
