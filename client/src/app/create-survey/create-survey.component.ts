@@ -53,7 +53,7 @@ export class CreateSurveyComponent implements OnInit {
   }
 
   createSurvey() {
-    //    this.surveyApi.addSurvey();
+    this.surveyApi.addSurvey();
   }
   ngOnInit(): void {}
 }
