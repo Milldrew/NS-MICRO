@@ -26,7 +26,8 @@ export class ResponseService {
     return `This action updates a #${id} response`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} response`;
+  async remove(id: number) {
+    console.log({ id });
+    return await this.client.send<number>({ cmd: 'removeResponse' }, id);
   }
 }

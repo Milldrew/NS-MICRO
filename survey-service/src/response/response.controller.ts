@@ -39,8 +39,8 @@ export class ResponseController {
     return this.responseService.update(+id, updateResponseDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.responseService.remove(+id);
+  @MessagePattern({ cmd: 'removeResponse' })
+  remove(id: number) {
+    return this.responseService.remove(id);
   }
 }
