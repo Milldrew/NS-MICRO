@@ -1,0 +1,42 @@
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--gray);
+}
+
+.fab {
+  position: fixed;
+  bottom: 4vw;
+  right: 4vw;
+  width: 4vw;
+  height: 4vw;
+  background-color: var(--primary);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+}
+
+.fab:hover {
+  background-color: var(--secondary);
+}
+.fab:active {
+  background-color: var(--active);
+}
+p {
+  text-align: center;
+  line-height: 0.4;
+}

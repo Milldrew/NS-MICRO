@@ -47,7 +47,7 @@ export class SurveyComponent implements OnInit {
   createResponse(createResponseDto: CreateResponseDto) {
     this.createResponseService
       .addResponse(createResponseDto)
-      .subscribe((value) => {
+      .subscribe((value: any) => {
         console.log(value);
       });
   }

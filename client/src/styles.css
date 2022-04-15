@@ -1,10 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-  --gray: #999;
+  --gray: #ac9;
   --dark-gray: #333;
   --light-gray: #eee;
   --primary: #faa;
   --secondary: #da3;
+  --active: #ff0;
 }
 
 html,
