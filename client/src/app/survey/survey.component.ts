@@ -1,4 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {
+  CreateResponseDto,
+  CreateResponseService,
+} from '../services/create-response.service';
 
 @Component({
   selector: 'app-survey',
@@ -34,9 +38,17 @@ export class SurveyComponent implements OnInit {
     'Y',
     'Z',
   ];
-  constructor() {}
+  constructor(private readonly createResponseService: CreateResponseService) {}
 
   @Input()
   surveyData: any;
   ngOnInit(): void {}
+
+  createResponse(createResponseDto: CreateResponseDto) {
+    this.createResponseService
+      .addResponse(createResponseDto)
+      .subscribe((value) => {
+        console.log(value);
+      });
+  }
 }

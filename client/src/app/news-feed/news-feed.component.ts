@@ -10,6 +10,7 @@ export class NewsFeedComponent implements OnInit {
   constructor(private surveyFeed: SurveyFeedService) {}
   news: any[] = [
     {
+      id: 4,
       username: 'Joe',
       question: 'What is your favorite color?',
       answers: ['red', 'green', 'blue'],

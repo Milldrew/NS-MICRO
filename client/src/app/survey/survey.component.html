@@ -6,6 +6,8 @@
 </header>
 <main>
   <div *ngFor="let answer of surveyData.answers; let id = index" class="answer">
-    {{ this.questionId[id] }}. {{ answer }}
+    <p (click)="createResponse({ answerIndex: id, surveyId: surveyData.id })">
+      {{ this.questionId[id] }}. {{ answer }}
+    </p>
   </div>
 </main>
