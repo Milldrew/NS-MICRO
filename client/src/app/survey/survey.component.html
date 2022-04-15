@@ -1,1 +1,11 @@
-<p>{{ surveyData | json }}</p>
+<header class="question">
+  <p>Created by: {{ surveyData.username }}</p>
+  <p>
+    {{ surveyData.question }}
+  </p>
+</header>
+<main>
+  <div *ngFor="let answer of surveyData.answers; let id = index" class="answer">
+    {{ this.questionId[id] }}. {{ answer }}
+  </div>
+</main>
