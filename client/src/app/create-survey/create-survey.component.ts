@@ -54,10 +54,12 @@ export class CreateSurveyComponent implements OnInit {
   }
 
   createSurvey() {
+    console.log('create actio');
     this.surveyApi
-      .addSurvey({ authorName: 'Bo', ...this.createSurveyForm.value })
+      .addSurvey({ authorId: 1, ...this.createSurveyForm.value })
       .subscribe((newSurvey: any) => {
-        this.surveyFeed.emit('newsFeed', newSurvey);
+        const { authorId, ...surveyData } = newSurvey;
+        this.surveyFeed.emit('newsFeed', { username: 'bob', ...surveyData });
       });
   }
   ngOnInit(): void {}

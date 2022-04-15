@@ -11,7 +11,7 @@ export class SurveyService {
     @InjectRepository(Survey) private readonly surveyRepo: Repository<Survey>,
   ) {}
   create(createSurveyDto: CreateSurveyDto) {
-    console.log('hello from create');
+    console.log('hello from create AGAIN');
     const survey = this.surveyRepo.create(createSurveyDto);
     return this.surveyRepo.save(survey);
   }
