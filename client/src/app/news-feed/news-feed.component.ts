@@ -16,18 +16,11 @@ export class NewsFeedComponent implements OnInit {
   ];
 
   ngAfterContentChecked() {
-    this.surveyFeed.listen('newsFeed').subscribe((value) => {
-      console.log('hi from news feed', value);
-      this.news.push(value);
-    });
+    this.news = this.news;
   }
   ngOnInit(): void {
-    console.log('newfeed init top');
-    this.surveyFeed.emit('message', 'hello');
-    this.surveyFeed.listen('message').subscribe((data) => {
-      console.log(data);
+    this.surveyFeed.listen('newsFeed').subscribe((data) => {
+      this.news.push(data);
     });
-
-    console.log('newfeed init bottom');
   }
 }
