@@ -1,0 +1,17 @@
+:host {
+  margin-top: 40px;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+
+p {
+  text-align: center;
+}
+p {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}

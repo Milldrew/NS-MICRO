@@ -1,2 +1,6 @@
-<div *ngIf="isOpen" class="drawer"></div>
-<div class="fab"><span>Ⅲ</span></div>
+<div *ngIf="isOpen" class="drawer">
+  <div *ngFor="let menuItemData of menuItems">
+    <app-menu-item [menuItemData]="menuItemData"> </app-menu-item>
+  </div>
+</div>
+<div class="fab" (click)="toggleDrawer()"><span>Ⅲ</span></div>

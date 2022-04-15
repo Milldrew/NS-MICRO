@@ -3,9 +3,11 @@
   --gray: #ac9;
   --dark-gray: #333;
   --light-gray: #eee;
-  --primary: #faa;
-  --secondary: #da3;
+  --primary: #ffa;
+  --secondary: #eda;
   --active: #ff0;
+  --se-width: 375px;
+  --se-height: 667px;
 }
 
 html,

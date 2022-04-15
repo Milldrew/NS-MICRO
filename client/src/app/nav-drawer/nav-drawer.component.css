@@ -19,25 +19,22 @@
   position: fixed;
   bottom: 4vw;
   right: 4vw;
-  width: 4vw;
-  height: 4vw;
+  width: 55px;
+  height: 55px;
   background-color: var(--secondary);
   border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 25px;
-  color: var(--primary);
+  font-size: 20px;
 }
 
 .fab:hover {
-  background-color: var(--secondary);
-  color: var(--primary);
+  background-color: var(--primary);
 }
 .fab:active {
   background-color: var(--active);
-  color: var(--secondary);
 }
 p {
   text-align: center;
@@ -45,4 +42,15 @@ p {
 }
 span {
   transform: rotate(90deg);
+  font-size: 30px;
+}
+
+@media only screen and (max-width: 667px) {
+  span {
+    font-size: 18px;
+  }
+  .fab {
+    width: 40px;
+    height: 40px;
+  }
 }

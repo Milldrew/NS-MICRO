@@ -9,9 +9,10 @@ import { NewsFeedComponent } from './news-feed/news-feed.component';
 import { NewsFeedModule } from './news-feed/news-feed.module';
 import { SurveyComponent } from './survey/survey.component';
 import { NavDrawerComponent } from './nav-drawer/nav-drawer.component';
+import { MenuItemComponent } from './nav-drawer/menu-item/menu-item.component';
 
 @NgModule({
-  declarations: [AppComponent, NewsFeedComponent, SurveyComponent, NavDrawerComponent],
+  declarations: [AppComponent, NewsFeedComponent, SurveyComponent, NavDrawerComponent, MenuItemComponent],
   imports: [
     ReactiveFormsModule,
     BrowserModule,
