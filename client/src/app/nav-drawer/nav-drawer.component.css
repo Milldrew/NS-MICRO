@@ -21,22 +21,28 @@
   right: 4vw;
   width: 4vw;
   height: 4vw;
-  background-color: var(--primary);
+  background-color: var(--secondary);
   border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 20px;
+  font-size: 25px;
+  color: var(--primary);
 }
 
 .fab:hover {
   background-color: var(--secondary);
+  color: var(--primary);
 }
 .fab:active {
   background-color: var(--active);
+  color: var(--secondary);
 }
 p {
   text-align: center;
   line-height: 0.4;
+}
+span {
+  transform: rotate(90deg);
 }
