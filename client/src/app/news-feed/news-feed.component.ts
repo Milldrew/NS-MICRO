@@ -8,7 +8,14 @@ import { SurveyFeedService } from './services/survey-feed.service';
 })
 export class NewsFeedComponent implements OnInit {
   constructor(private surveyFeed: SurveyFeedService) {}
+  news: any[] = [];
 
+  ngAfterContentChecked() {
+    this.surveyFeed.listen('newsFeed').subscribe((value) => {
+      console.log('hi from news feed', value);
+      this.news.push(value);
+    });
+  }
   ngOnInit(): void {
     console.log('newfeed init top');
     this.surveyFeed.emit('message', 'hello');
