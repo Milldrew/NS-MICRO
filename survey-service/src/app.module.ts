@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { SurveyModule } from './survey/survey.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ResponseModule } from './response/response.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       autoLoadEntities: true,
       synchronize: true,
     }),
+    ResponseModule,
   ],
   controllers: [AppController],
   providers: [AppService],
