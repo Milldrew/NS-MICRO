@@ -1,11 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AllSurveysComponent } from './all-surveys/all-surveys.component';
+import { ChatScreenComponent } from './chat-screen/chat-screen.component';
 import { CreateSurveyComponent } from './create-survey/create-survey.component';
+import { MyResponsesComponent } from './my-responses/my-responses.component';
+import { MySurveysComponent } from './my-surveys/my-surveys.component';
 import { NewsFeedComponent } from './news-feed/news-feed.component';
 
 const routes: Routes = [
-  { path: 'newsfeed', component: NewsFeedComponent },
+  { path: 'all-surveys', component: AllSurveysComponent },
+  { path: 'chat', component: ChatScreenComponent },
   { path: 'create-survey', component: CreateSurveyComponent },
+  { path: 'my-responses', component: MyResponsesComponent },
+  { path: 'my-surveys', component: MySurveysComponent },
+  { path: 'news-feed', component: NewsFeedComponent },
 ];
 
 @NgModule({

@@ -10,9 +10,13 @@ import { NewsFeedModule } from './news-feed/news-feed.module';
 import { SurveyComponent } from './survey/survey.component';
 import { NavDrawerComponent } from './nav-drawer/nav-drawer.component';
 import { MenuItemComponent } from './nav-drawer/menu-item/menu-item.component';
+import { ChatScreenComponent } from './chat-screen/chat-screen.component';
+import { AllSurveysComponent } from './all-surveys/all-surveys.component';
+import { MySurveysComponent } from './my-surveys/my-surveys.component';
+import { MyResponsesComponent } from './my-responses/my-responses.component';
 
 @NgModule({
-  declarations: [AppComponent, NewsFeedComponent, SurveyComponent, NavDrawerComponent, MenuItemComponent],
+  declarations: [AppComponent, NewsFeedComponent, SurveyComponent, NavDrawerComponent, MenuItemComponent, ChatScreenComponent, AllSurveysComponent, MySurveysComponent, MyResponsesComponent],
   imports: [
     ReactiveFormsModule,
     BrowserModule,

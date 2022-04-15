@@ -6,23 +6,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-drawer.component.css'],
 })
 export class NavDrawerComponent implements OnInit {
-  isOpen: boolean = true;
+  isOpen: boolean = false;
   menuItems = [
     {
       name: 'My Surveys',
-      route: 'my-surveys',
+      path: 'my-surveys',
     },
     {
       name: 'My Responses',
-      route: 'my-responses',
+      path: 'my-responses',
     },
     {
       name: 'News Feed',
-      route: 'news-feed',
+      path: 'news-feed',
     },
     {
       name: 'all surveys',
-      route: 'all-surveys',
+      path: 'all-surveys',
+    },
+    {
+      name: 'create survey',
+      path: 'create-survey',
+    },
+    {
+      name: 'chat',
+      path: 'chat',
     },
   ];
   constructor() {}
