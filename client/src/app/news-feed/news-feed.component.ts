@@ -8,7 +8,12 @@ import { SurveyFeedService } from './services/survey-feed.service';
 })
 export class NewsFeedComponent implements OnInit {
   constructor(private surveyFeed: SurveyFeedService) {}
-  news: any[] = [];
+  news: any[] = [
+    {
+      question: 'What is your favorite color?',
+      answers: ['red', 'green', 'blue'],
+    },
+  ];
 
   ngAfterContentChecked() {
     this.surveyFeed.listen('newsFeed').subscribe((value) => {

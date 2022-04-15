@@ -24,14 +24,10 @@ export class CreateSurveyService {
   addSurvey(createSurveyDto: CreateSurveyDto) {
     console.log(this.constants.surveyUrl);
     console.log(createSurveyDto);
-    this.http
-      .post<CreateSurveyDto>(
-        this.constants.surveyUrl,
-        createSurveyDto,
-        this.httpOptions
-      )
-      .subscribe((newSurvey) => {
-        this.surveyFeed.emit('newsFeed', newSurvey);
-      });
+    return this.http.post<CreateSurveyDto>(
+      this.constants.surveyUrl,
+      createSurveyDto,
+      this.httpOptions
+    );
   }
 }

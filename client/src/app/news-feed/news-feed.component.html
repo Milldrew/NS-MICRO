@@ -1,1 +1,3 @@
-<div *ngFor="let story of news">{{ story | json }}</div>
+<div *ngFor="let story of news">
+  <app-survey [surveyData]="story"> </app-survey>
+</div>

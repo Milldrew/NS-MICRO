@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormArray } from '@angular/forms';
+import { SurveyFeedService } from '../news-feed/services/survey-feed.service';
 import { CreateSurveyService } from './create-survey.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { CreateSurveyService } from './create-survey.service';
 })
 export class CreateSurveyComponent implements OnInit {
   constructor(
+    private surveyFeed: SurveyFeedService,
     private fb: FormBuilder,
     private readonly surveyApi: CreateSurveyService
   ) {}
@@ -52,7 +54,11 @@ export class CreateSurveyComponent implements OnInit {
   }
 
   createSurvey() {
-    this.surveyApi.addSurvey({ authorId: 1, ...this.createSurveyForm.value });
+    this.surveyApi
+      .addSurvey({ authorName: 'Bo', ...this.createSurveyForm.value })
+      .subscribe((newSurvey: any) => {
+        this.surveyFeed.emit('newsFeed', newSurvey);
+      });
   }
   ngOnInit(): void {}
 }
