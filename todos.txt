@@ -1,5 +1,0 @@
-1. create a client that creates a survey.
->>> create a service that hits the api
-2. trigger an event that registers the survey into the newsfeed
-3. setup redis to cache the newsfeed and send the chached messages when someone connects to the news feed.
-
