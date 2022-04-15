@@ -31,7 +31,7 @@ export class CreateSurveyService {
         this.httpOptions
       )
       .subscribe((newSurvey) => {
-        this.surveyFeed.emit('newSurvey', newSurvey);
+        this.surveyFeed.emit('newsFeed', newSurvey);
       });
   }
 }
