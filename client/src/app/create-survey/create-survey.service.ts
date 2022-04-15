@@ -1,5 +1,6 @@
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
+import { SurveyFeedService } from '../news-feed/services/survey-feed.service';
 import { ConstantsService } from '../services/constants.service';
 
 type CreateSurveyDto = {
@@ -13,6 +14,7 @@ type CreateSurveyDto = {
 })
 export class CreateSurveyService {
   constructor(
+    private readonly surveyFeed: SurveyFeedService,
     private readonly constants: ConstantsService,
     private http: HttpClient
   ) {}
@@ -22,12 +24,14 @@ export class CreateSurveyService {
   addSurvey(createSurveyDto: CreateSurveyDto) {
     console.log(this.constants.surveyUrl);
     console.log(createSurveyDto);
-    return this.http
+    this.http
       .post<CreateSurveyDto>(
         this.constants.surveyUrl,
         createSurveyDto,
         this.httpOptions
       )
-      .subscribe((value) => console.log(value));
+      .subscribe((newSurvey) => {
+        this.surveyFeed.emit('newSurvey', newSurvey);
+      });
   }
 }
