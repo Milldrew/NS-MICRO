@@ -16,7 +16,7 @@ import { MessagePattern } from '@nestjs/microservices';
 export class ResponseController {
   constructor(private readonly responseService: ResponseService) {}
 
-  @Post()
+  @MessagePattern({ cmd: 'createResponse' })
   create(@Body() createResponseDto: CreateResponseDto) {
     return this.responseService.create(createResponseDto);
   }

@@ -6,8 +6,10 @@ import { UpdateResponseDto } from './dto/update-response.dto';
 @Injectable()
 export class ResponseService {
   constructor(@Inject('SURVEY_SERVICE') private client: ClientProxy) {}
-  create(createResponseDto: CreateResponseDto) {
-    return 'This action adds a new response';
+  async create(createResponseDto: CreateResponseDto) {
+    return await this.client
+      .send<any>({ cmd: 'createResponse' }, createResponseDto)
+      .toPromise();
   }
 
   async findAll() {

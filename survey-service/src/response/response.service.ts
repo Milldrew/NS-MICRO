@@ -12,7 +12,9 @@ export class ResponseService {
     private readonly responseRepo: Repository<Response>,
   ) {}
   create(createResponseDto: CreateResponseDto) {
-    const response = this.responseRepo.create(createResponseDto);
+    const updatedResponse = { authorId: 1, ...createResponseDto };
+    const response = this.responseRepo.create(updatedResponse);
+
     return this.responseRepo.save(response);
   }
 
