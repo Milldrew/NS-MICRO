@@ -10,6 +10,7 @@ import {
 import { SurveyService } from './survey.service';
 import { CreateSurveyDto } from './dto/create-survey.dto';
 import { UpdateSurveyDto } from './dto/update-survey.dto';
+import { PaginationQueryDto } from 'src/dtos/pagination-query.dto';
 
 @Controller('survey')
 export class SurveyController {
@@ -27,8 +28,8 @@ export class SurveyController {
   }
 
   @Get()
-  findAll() {
-    return this.surveyService.findAll();
+  findAll(@Body() paginationQueryDto: PaginationQueryDto) {
+    return this.surveyService.findAll(paginationQueryDto);
   }
 
   @Get(':id')

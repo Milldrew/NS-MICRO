@@ -2,6 +2,7 @@ import { ClientProxy } from '@nestjs/microservices';
 import { Inject, Injectable } from '@nestjs/common';
 import { CreateSurveyDto } from './dto/create-survey.dto';
 import { UpdateSurveyDto } from './dto/update-survey.dto';
+import { PaginationQueryDto } from 'src/dtos/pagination-query.dto';
 
 @Injectable()
 export class SurveyService {
@@ -18,9 +19,9 @@ export class SurveyService {
       .send<any>({ cmd: 'findAllMy' }, 'findAll')
       .toPromise();
   }
-  async findAll() {
+  async findAll(paginationQueryDto: PaginationQueryDto) {
     return await this.client
-      .send<any>({ cmd: 'findAll' }, 'findAll')
+      .send<any>({ cmd: 'findAll' }, paginationQueryDto)
       .toPromise();
   }
 
