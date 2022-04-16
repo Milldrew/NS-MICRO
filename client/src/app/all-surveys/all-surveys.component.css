@@ -5,6 +5,7 @@
   color: var(--light-gray);
   flex-direction: column;
   overflow: scroll;
+  --more-height: 80px;
 }
 
 .more {
@@ -18,11 +19,14 @@
   text-align: center;
   background-color: var(--primary);
   color: var(--dark-gray);
-  height: 80px;
+  height: var(--more-height);
 }
 .more:hover {
   background-color: var(--secondary);
 }
 .more:active {
   background-color: var(--active);
+}
+.all-surveys {
+  margin-bottom: var(--more-height);
 }
