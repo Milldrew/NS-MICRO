@@ -1,1 +1,5 @@
-<p>my-responses works!</p>
+<h2>My Responses</h2>
+
+<div *ngFor="let responseData of myResponses">
+  <app-response [responseData]="responseData"> </app-response>
+</div>

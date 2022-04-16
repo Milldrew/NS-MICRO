@@ -18,8 +18,11 @@ export class ResponseService {
     return this.responseRepo.save(response);
   }
 
-  findAll() {
+  findAllMy() {
     return this.responseRepo.find();
+  }
+  findAll() {
+    return this.responseRepo.findBy({ authorId: 1 });
   }
 
   findOne(id: number) {

@@ -21,6 +21,10 @@ export class ResponseController {
     return this.responseService.create(createResponseDto);
   }
 
+  @MessagePattern({ cmd: 'allMyResponses' })
+  findAllMy() {
+    return this.responseService.findAllMy();
+  }
   @MessagePattern({ cmd: 'allResponses' })
   findAll() {
     return this.responseService.findAll();

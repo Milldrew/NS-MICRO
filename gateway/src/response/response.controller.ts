@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { ResponseService } from './response.service';
 import { CreateResponseDto } from './dto/create-response.dto';
 import { UpdateResponseDto } from './dto/update-response.dto';
@@ -12,6 +20,10 @@ export class ResponseController {
     return this.responseService.create(createResponseDto);
   }
 
+  @Get('my')
+  findAllMy() {
+    return this.responseService.findAllMy();
+  }
   @Get()
   findAll() {
     return this.responseService.findAll();
@@ -23,7 +35,10 @@ export class ResponseController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateResponseDto: UpdateResponseDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateResponseDto: UpdateResponseDto,
+  ) {
     return this.responseService.update(+id, updateResponseDto);
   }
 

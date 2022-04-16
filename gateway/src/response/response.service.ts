@@ -12,6 +12,11 @@ export class ResponseService {
       .toPromise();
   }
 
+  async findAllMy() {
+    return await this.client
+      .send<any>({ cmd: 'allMyResponses' }, 'allMyResponses')
+      .toPromise();
+  }
   async findAll() {
     return await this.client
       .send<any>({ cmd: 'allResponses' }, 'allResponses')
@@ -27,7 +32,6 @@ export class ResponseService {
   }
 
   async remove(id: number) {
-    console.log({ id });
     return await this.client.send<number>({ cmd: 'removeResponse' }, id);
   }
 }

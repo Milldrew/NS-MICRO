@@ -14,9 +14,10 @@ import { ChatScreenComponent } from './chat-screen/chat-screen.component';
 import { AllSurveysComponent } from './all-surveys/all-surveys.component';
 import { MySurveysComponent } from './my-surveys/my-surveys.component';
 import { MyResponsesComponent } from './my-responses/my-responses.component';
+import { ResponseComponent } from './response/response.component';
 
 @NgModule({
-  declarations: [AppComponent, NewsFeedComponent, SurveyComponent, NavDrawerComponent, MenuItemComponent, ChatScreenComponent, AllSurveysComponent, MySurveysComponent, MyResponsesComponent],
+  declarations: [AppComponent, NewsFeedComponent, SurveyComponent, NavDrawerComponent, MenuItemComponent, ChatScreenComponent, AllSurveysComponent, MySurveysComponent, MyResponsesComponent, ResponseComponent],
   imports: [
     ReactiveFormsModule,
     BrowserModule,
