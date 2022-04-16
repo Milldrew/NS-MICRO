@@ -6,3 +6,23 @@
   flex-direction: column;
   overflow: scroll;
 }
+
+.more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  background-color: var(--primary);
+  color: var(--dark-gray);
+  height: 80px;
+}
+.more:hover {
+  background-color: var(--secondary);
+}
+.more:active {
+  background-color: var(--active);
+}
