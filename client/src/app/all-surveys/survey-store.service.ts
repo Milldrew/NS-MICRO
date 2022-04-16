@@ -16,8 +16,12 @@ export class SurveyStoreService {
   ) {}
 
   getFirstPage() {
-    return this.http.get(
-      this.constants.allSurveysPaginationUrl(this.offset, this.limit)
-    );
+    this.http
+      .get(this.constants.allSurveysPaginationUrl(this.offset, this.limit))
+      .subscribe((surveys: any) => {
+        console.log('first page came');
+        console.log(surveys);
+        this.allSurveys.push(...surveys);
+      });
   }
 }

@@ -1,1 +1,5 @@
-<div></div>
+<div *ngFor="let survey of surveys">
+  hello
+  <app-survey [surveyData]="survey"> </app-survey>
+</div>
+{{ surveys | json }}

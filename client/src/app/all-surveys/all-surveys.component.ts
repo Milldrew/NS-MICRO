@@ -9,9 +9,12 @@ import { SurveyStoreService } from './survey-store.service';
 export class AllSurveysComponent implements OnInit {
   constructor(private readonly surveyStore: SurveyStoreService) {}
 
+  surveys: any = [];
+  ngAfterContentChecked() {
+    this.surveys = this.surveys;
+  }
   ngOnInit(): void {
-    this.surveyStore.getFirstPage().subscribe((value) => {
-      console.log(value);
-    });
+    this.surveyStore.getFirstPage();
+    this.surveys = this.surveyStore.allSurveys;
   }
 }
