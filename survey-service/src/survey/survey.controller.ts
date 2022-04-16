@@ -20,6 +20,10 @@ export class SurveyController {
   create(@Body() createSurveyDto: CreateSurveyDto) {
     return this.surveyService.create(createSurveyDto);
   }
+  @MessagePattern({ cmd: 'findAllMy' })
+  async findAllMy(data: null): Promise<any> {
+    return this.surveyService.findAllMy();
+  }
   @MessagePattern({ cmd: 'findAll' })
   async findAll(data: null): Promise<any> {
     return this.surveyService.findAll();

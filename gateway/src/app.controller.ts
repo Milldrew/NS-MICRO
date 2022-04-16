@@ -30,9 +30,4 @@ export class AppController {
   getRoot(@Request() req) {
     return req.user;
   }
-
-  @Get('survey/:action')
-  getSurveys(@Param('action') action: string) {
-    return this.appService.getSurveys(action);
-  }
 }

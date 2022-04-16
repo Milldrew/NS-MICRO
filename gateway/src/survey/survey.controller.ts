@@ -21,6 +21,11 @@ export class SurveyController {
     return this.surveyService.create(createSurveyDto);
   }
 
+  @Get('my')
+  findAllMy() {
+    return this.surveyService.findAllMy();
+  }
+
   @Get()
   findAll() {
     return this.surveyService.findAll();

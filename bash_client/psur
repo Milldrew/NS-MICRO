@@ -1,1 +1,1 @@
-curl -d '{"authorId":1, "name": "name", "answers": ["answer"]}' -H "Content-Type: application/json" 'http://localhost:3000/survey'
+curl -d '{"authorId":2, "question": "What do you like?", "answers": ["food", "water","exercise"]}' -H "Content-Type: application/json" 'http://localhost:3000/survey'

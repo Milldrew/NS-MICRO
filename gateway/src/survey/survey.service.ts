@@ -8,12 +8,16 @@ export class SurveyService {
   constructor(@Inject('SURVEY_SERVICE') private client: ClientProxy) {}
 
   async create(createSurveyDto: CreateSurveyDto) {
-    console.log('hi hihi');
     return await this.client
       .send<CreateSurveyDto>({ cmd: 'createSurvey' }, createSurveyDto)
       .toPromise();
   }
 
+  async findAllMy() {
+    return await this.client
+      .send<any>({ cmd: 'findAllMy' }, 'findAll')
+      .toPromise();
+  }
   async findAll() {
     return await this.client
       .send<any>({ cmd: 'findAll' }, 'findAll')

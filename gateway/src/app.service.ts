@@ -7,9 +7,4 @@ export class AppService {
   getHello(): string {
     return 'Hello World!';
   }
-
-  getSurveys(action: string) {
-    console.log('before emit');
-    this.client.emit('all_surveys', action);
-  }
 }
