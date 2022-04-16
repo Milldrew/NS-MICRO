@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsFeedStoreService } from './services/news-feed-store.service';
 import { SurveyFeedService } from './services/survey-feed.service';
 
 @Component({
@@ -7,7 +8,10 @@ import { SurveyFeedService } from './services/survey-feed.service';
   styleUrls: ['./news-feed.component.css'],
 })
 export class NewsFeedComponent implements OnInit {
-  constructor(private surveyFeed: SurveyFeedService) {}
+  constructor(
+    private surveyFeed: SurveyFeedService,
+    public newsStore: NewsFeedStoreService
+  ) {}
   news: any[] = [
     {
       id: 4,
@@ -18,13 +22,12 @@ export class NewsFeedComponent implements OnInit {
   ];
 
   ngAfterContentChecked() {
-    this.news = this.news;
+    this.news = this.newsStore.news;
   }
   ngOnInit(): void {
     console.log('hello from init');
     this.surveyFeed.listen('newsFeed').subscribe((data) => {
-      console.log('hello from init');
-      this.news.push(data);
+      this.newsStore.addNews(data);
     });
   }
 }
