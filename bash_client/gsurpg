@@ -1,0 +1,2 @@
+ACTION=$1
+curl http://localhost:3000/survey?limit=3&offset=3

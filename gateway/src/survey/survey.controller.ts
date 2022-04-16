@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { SurveyService } from './survey.service';
 import { CreateSurveyDto } from './dto/create-survey.dto';
@@ -28,7 +29,7 @@ export class SurveyController {
   }
 
   @Get()
-  findAll(@Body() paginationQueryDto: PaginationQueryDto) {
+  findAll(@Query() paginationQueryDto: PaginationQueryDto) {
     return this.surveyService.findAll(paginationQueryDto);
   }
 
