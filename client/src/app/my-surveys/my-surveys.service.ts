@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ConstantsService } from '../services/constants.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MySurveysService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private constants: ConstantsService) {}
   getAllMySurveys() {
-    console.log('get my surveys');
+    return this.http.get(this.constants.mySurveysUrl);
   }
 }

@@ -8,11 +8,14 @@ import { MySurveysService } from './my-surveys.service';
 })
 export class MySurveysComponent implements OnInit {
   constructor(readonly getSurveys: MySurveysService) {}
+  mySurveys: any;
 
   getAllMySurveys() {
     this.getSurveys.getAllMySurveys();
   }
   ngOnInit(): void {
-    this.getAllMySurveys();
+    this.getSurveys.getAllMySurveys().subscribe((surveys: any): void => {
+      this.mySurveys = surveys;
+    });
   }
 }

@@ -1,1 +1,5 @@
 <h2>My Surveys</h2>
+
+<div *ngFor="let surveyData of mySurveys">
+  <app-survey [surveyData]="surveyData"> </app-survey>
+</div>
