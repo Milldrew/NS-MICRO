@@ -21,7 +21,9 @@ export class NewsFeedComponent implements OnInit {
     this.news = this.news;
   }
   ngOnInit(): void {
+    console.log('hello from init');
     this.surveyFeed.listen('newsFeed').subscribe((data) => {
+      console.log('hello from init');
       this.news.push(data);
     });
   }

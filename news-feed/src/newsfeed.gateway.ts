@@ -18,8 +18,7 @@ export class NewsfeedGateway {
   }
   @SubscribeMessage('newsFeed')
   newsFeed(client: any, newsFeed: any): void {
-    console.log({ newsFeed });
-    console.log('hello form new feed');
+    console.log('before emit');
     this.server.emit('newsFeed', newsFeed);
   }
 }
