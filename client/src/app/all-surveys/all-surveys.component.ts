@@ -10,6 +10,10 @@ export class AllSurveysComponent implements OnInit {
   constructor(private readonly surveyStore: SurveyStoreService) {}
 
   surveys: any = [];
+
+  getNextPage() {
+    this.surveyStore.getNextPage();
+  }
   ngAfterContentChecked() {
     this.surveys = this.surveys;
   }

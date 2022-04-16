@@ -3,4 +3,4 @@
   <app-survey [surveyData]="survey"> </app-survey>
 </div>
 {{ surveys | json }}
-<div class="more"><p>MORE SURVEYS</p></div>
+<div class="more" (click)="getNextPage()"><p>MORE SURVEYS</p></div>

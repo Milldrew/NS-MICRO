@@ -10,10 +10,10 @@ export class ConstantsService {
   mySurveysUrl = `http://192.168.0.143:3000/survey/my`;
   newsFeedUri = `ws://192.168.0.143:3002`;
 
-  firstPageOfSurveys(offset: number, limit: number) {
-    return `http://192.168.0.143:3000/survey?offset=${offset}&limit=${limit}`;
+  firstPageOfSurveys(limit: number) {
+    return `http://192.168.0.143:3000/survey?limit=${limit}`;
   }
   allSurveysPaginationUrl(offset: number, limit: number) {
-    return `http://192.168.0.143:3000/survey?limit=${limit}`;
+    return `http://192.168.0.143:3000/survey?limit=${limit}&offset=${offset}`;
   }
 }
