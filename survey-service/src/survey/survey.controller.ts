@@ -11,6 +11,7 @@ import { SurveyService } from './survey.service';
 import { CreateSurveyDto } from './dto/create-survey.dto';
 import { UpdateSurveyDto } from './dto/update-survey.dto';
 import { EventPattern, MessagePattern } from '@nestjs/microservices';
+import { PaginationQueryDto } from 'src/dtos/pagination-query.dto';
 
 @Controller('survey')
 export class SurveyController {
@@ -25,8 +26,8 @@ export class SurveyController {
     return this.surveyService.findAllMy();
   }
   @MessagePattern({ cmd: 'findAll' })
-  async findAll(data: null): Promise<any> {
-    return this.surveyService.findAll();
+  async findAll(paginationQueryDto: PaginationQueryDto): Promise<any> {
+    return this.surveyService.findAll(paginationQueryDto);
   }
 
   @Get(':id')

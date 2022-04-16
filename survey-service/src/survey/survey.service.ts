@@ -1,5 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { PaginationQueryDto } from 'src/dtos/pagination-query.dto';
 import { Repository } from 'typeorm';
 import { CreateSurveyDto } from './dto/create-survey.dto';
 import { UpdateSurveyDto } from './dto/update-survey.dto';
@@ -19,8 +20,13 @@ export class SurveyService {
   findAllMy() {
     return this.surveyRepo.findBy({ authorId: 2 });
   }
-  findAll() {
-    return this.surveyRepo.find();
+
+  findAll(paginationQueryDto: PaginationQueryDto) {
+    const { offset, limit } = paginationQueryDto;
+    return this.surveyRepo.find({
+      skip: offset,
+      take: limit,
+    });
   }
 
   findOne(id: number) {
