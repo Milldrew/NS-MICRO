@@ -3,4 +3,6 @@
   height: 100%;
   width: 100%;
   color: var(--light-gray);
+  flex-direction: column;
+  overflow: scroll;
 }
