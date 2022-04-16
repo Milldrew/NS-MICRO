@@ -23,10 +23,17 @@ export class SurveyService {
 
   findAll(paginationQueryDto: PaginationQueryDto) {
     const { offset, limit } = paginationQueryDto;
-    return this.surveyRepo.find({
-      skip: offset,
-      take: limit,
-    });
+    if (offset && limit) {
+      return this.surveyRepo.find({
+        skip: offset,
+        take: limit,
+      });
+    } else if (limit) {
+      return this.surveyRepo.find({
+        take: limit,
+      });
+    }
+    this.surveyRepo.find();
   }
 
   findOne(id: number) {
