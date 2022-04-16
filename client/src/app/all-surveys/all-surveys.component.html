@@ -1,6 +1,4 @@
 <div class="all-surveys" *ngFor="let survey of surveys">
-  hello
   <app-survey [surveyData]="survey"> </app-survey>
 </div>
-{{ surveys | json }}
 <div class="more" (click)="getNextPage()"><p>MORE SURVEYS</p></div>
