@@ -7,6 +7,7 @@
 }
 :host:hover {
   background-color: #00000055;
+  color: var(--active);
 }
 
 p {
@@ -17,9 +18,6 @@ p {
   cursor: pointer;
 }
 
-p:hover {
-  color: var(--active);
-}
 p:active {
   color: var(--primary);
 }
