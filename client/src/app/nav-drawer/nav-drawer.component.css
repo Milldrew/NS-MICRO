@@ -1,4 +1,5 @@
 :host {
+  overflow: scroll;
 }
 
 .drawer {
