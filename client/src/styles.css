@@ -29,3 +29,7 @@ app-root {
   color: var(--dark-gray);
   font-family: Arial, Helvetica, sans-serif;
 }
+h2 {
+  font-weight: 300;
+  letter-spacing: 1.2px;
+}
