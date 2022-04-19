@@ -16,3 +16,10 @@ header {
   font-weight: bolder;
   letter-spacing: 1.1px;
 }
+
+.a {
+  border: 1px solid #00000000;
+}
+.a:hover {
+  border: 1px solid blue;
+}
