@@ -11,3 +11,8 @@ main,
 header {
   padding: 10px 10px;
 }
+
+.q {
+  font-weight: bolder;
+  letter-spacing: 1.1px;
+}
