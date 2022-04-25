@@ -6,8 +6,12 @@ import { CreateSurveyComponent } from './create-survey/create-survey.component';
 import { MyResponsesComponent } from './my-responses/my-responses.component';
 import { MySurveysComponent } from './my-surveys/my-surveys.component';
 import { NewsFeedComponent } from './news-feed/news-feed.component';
+import { RegisterComponent } from './register/register.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 const routes: Routes = [
+  { path: '', component: SignInComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'all-surveys', component: AllSurveysComponent },
   { path: 'chat', component: ChatScreenComponent },
   { path: 'create-survey', component: CreateSurveyComponent },

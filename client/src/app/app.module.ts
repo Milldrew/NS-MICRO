@@ -19,7 +19,20 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { RegisterComponent } from './register/register.component';
 
 @NgModule({
-  declarations: [AppComponent, NewsFeedComponent, SurveyComponent, NavDrawerComponent, MenuItemComponent, ChatScreenComponent, AllSurveysComponent, MySurveysComponent, MyResponsesComponent, ResponseComponent, SignInComponent, RegisterComponent],
+  declarations: [
+    AppComponent,
+    NewsFeedComponent,
+    SurveyComponent,
+    NavDrawerComponent,
+    MenuItemComponent,
+    ChatScreenComponent,
+    AllSurveysComponent,
+    MySurveysComponent,
+    MyResponsesComponent,
+    ResponseComponent,
+    SignInComponent,
+    RegisterComponent,
+  ],
   imports: [
     ReactiveFormsModule,
     BrowserModule,
