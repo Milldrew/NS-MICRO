@@ -1,9 +1,16 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
+  constructor(private http: HttpClient) {}
+  signIn() {
+    console.log('signin service');
+  }
 
-  constructor() { }
+  register() {
+    console.log('regiser service');
+  }
 }

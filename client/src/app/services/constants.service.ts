@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ConstantsService {
+  register = `http://192.168.0.143:3000/user`;
+  signInUrl = `http://192.168.0.143:3000/auth/login`;
   responseUrl = `http://192.168.0.143:3000/response`;
   surveyUrl = `http://192.168.0.143:3000/survey`;
   myResponsesUrl = `http://192.168.0.143:3000/response/my`;
