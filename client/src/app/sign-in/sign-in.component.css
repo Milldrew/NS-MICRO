@@ -10,12 +10,20 @@
   background-color: var(--light-gray);
   border: 9px solid red;
 }
-p {
-  color: white;
-}
 
 form {
   display: flex;
   flex-direction: column;
   border: 1px solid red;
+}
+
+button {
+  padding: 8px 8px;
+  background-color: var(--primary);
+}
+button:hover {
+  background-color: var(--hover);
+}
+button:active {
+  background-color: var(--active);
 }
