@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-drawer.component.css'],
 })
 export class NavDrawerComponent implements OnInit {
-  isOpen: boolean = true;
+  isOpen: boolean = false;
   menuItems = [
     {
       name: 'My Surveys',

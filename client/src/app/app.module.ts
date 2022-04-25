@@ -15,9 +15,11 @@ import { AllSurveysComponent } from './all-surveys/all-surveys.component';
 import { MySurveysComponent } from './my-surveys/my-surveys.component';
 import { MyResponsesComponent } from './my-responses/my-responses.component';
 import { ResponseComponent } from './response/response.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
-  declarations: [AppComponent, NewsFeedComponent, SurveyComponent, NavDrawerComponent, MenuItemComponent, ChatScreenComponent, AllSurveysComponent, MySurveysComponent, MyResponsesComponent, ResponseComponent],
+  declarations: [AppComponent, NewsFeedComponent, SurveyComponent, NavDrawerComponent, MenuItemComponent, ChatScreenComponent, AllSurveysComponent, MySurveysComponent, MyResponsesComponent, ResponseComponent, SignInComponent, RegisterComponent],
   imports: [
     ReactiveFormsModule,
     BrowserModule,
