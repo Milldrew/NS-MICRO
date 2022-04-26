@@ -8,7 +8,7 @@ h1 {
 }
 main {
   display: flex;
-  justify-content: center;
+  ustify-content: center;
   height: 90%;
   width: 80%;
   background-color: var(--dark-gray);
