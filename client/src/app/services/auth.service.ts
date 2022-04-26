@@ -11,12 +11,12 @@ export class AuthService {
     console.log('signin service');
   }
 
-  register() {
+  register(username: string, password: string) {
     console.log('regiser service');
     this.http
       .post(this.constants.register, {
-        username: 'foobar4000',
-        password: 'foobar4000',
+        username,
+        password,
       })
       .subscribe(
         (value) => console.log(value),
