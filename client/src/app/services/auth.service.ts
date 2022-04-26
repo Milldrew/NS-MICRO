@@ -7,8 +7,17 @@ import { ConstantsService } from './constants.service';
 })
 export class AuthService {
   constructor(private http: HttpClient, private constants: ConstantsService) {}
-  signIn() {
-    console.log('signin service');
+  signIn(username: string, password:string) {
+    this.http
+      .post(this.constants.signInUrl, {
+        username,
+        password,
+      })
+      .subscribe(
+        (value) => console.log(value),
+        (warn) => console.warn(warn)
+      );
+  }
   }
 
   register(username: string, password: string) {
