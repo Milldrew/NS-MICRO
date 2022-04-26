@@ -17,8 +17,8 @@ export class SurveyService {
     return this.surveyRepo.save(survey);
   }
 
-  findAllMy() {
-    return this.surveyRepo.findBy({ authorId: 2 });
+  findAllMy(authorId: number) {
+    return this.surveyRepo.findBy({ authorId });
   }
 
   findAll(paginationQueryDto: PaginationQueryDto) {

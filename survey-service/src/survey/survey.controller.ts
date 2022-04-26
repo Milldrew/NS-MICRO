@@ -22,8 +22,8 @@ export class SurveyController {
     return this.surveyService.create(createSurveyDto);
   }
   @MessagePattern({ cmd: 'findAllMy' })
-  async findAllMy(data: null): Promise<any> {
-    return this.surveyService.findAllMy();
+  async findAllMy(data: number): Promise<any> {
+    return this.surveyService.findAllMy(data);
   }
   @MessagePattern({ cmd: 'findAll' })
   async findAll(paginationQueryDto: PaginationQueryDto): Promise<any> {
