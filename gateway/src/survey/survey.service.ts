@@ -3,6 +3,7 @@ import { Inject, Injectable } from '@nestjs/common';
 import { CreateSurveyDto } from './dto/create-survey.dto';
 import { UpdateSurveyDto } from './dto/update-survey.dto';
 import { PaginationQueryDto } from 'src/dtos/pagination-query.dto';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable()
 export class SurveyService {
@@ -14,15 +15,14 @@ export class SurveyService {
       .toPromise();
   }
 
-  async findAllMy() {
-    return await this.client
-      .send<any>({ cmd: 'findAllMy' }, 'findAll')
-      .toPromise();
+  findAllMy() {
+    return firstValueFrom(
+      this.client.send<any>({ cmd: 'findAllMy' }, 'findAll'),
+    );
   }
-  async findAll(paginationQueryDto: PaginationQueryDto) {
-    return await this.client
-      .send<any>({ cmd: 'findAll' }, paginationQueryDto)
-      .toPromise();
+  findAll(paginationQueryDto: PaginationQueryDto) {
+    console.log('hi');
+    return this.client.send<any>({ cmd: 'findAll' }, paginationQueryDto);
   }
 
   findOne(id: number) {

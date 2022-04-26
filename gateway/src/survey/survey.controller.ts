@@ -7,11 +7,14 @@ import {
   Param,
   Delete,
   Query,
+  Request,
+  UseGuards,
 } from '@nestjs/common';
 import { SurveyService } from './survey.service';
 import { CreateSurveyDto } from './dto/create-survey.dto';
 import { UpdateSurveyDto } from './dto/update-survey.dto';
 import { PaginationQueryDto } from 'src/dtos/pagination-query.dto';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 
 @Controller('survey')
 export class SurveyController {
@@ -23,8 +26,10 @@ export class SurveyController {
     return this.surveyService.create(createSurveyDto);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Get('my')
-  findAllMy() {
+  findAllMy(@Request() req) {
+    console.log(req.user);
     return this.surveyService.findAllMy();
   }
 
