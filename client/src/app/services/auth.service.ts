@@ -20,7 +20,7 @@ export class AuthService {
   }
 
   register(username: string, password: string) {
-    console.log('regiser service');
+    console.log({ username, password });
     this.http
       .post(this.constants.register, {
         username,

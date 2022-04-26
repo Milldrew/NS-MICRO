@@ -2,11 +2,11 @@
 <form (ngSubmit)="register()" [formGroup]="registerForm">
   <div class="input">
     <label>Username: </label>
-    <input />
+    <input formControlName="username" />
   </div>
   <div>
     <label>Password: </label>
-    <input />
+    <input formControlName="password" />
   </div>
   <p><a routerLink="">Sign in</a> instead.</p>
   <button type="submit">REGISTER</button>
