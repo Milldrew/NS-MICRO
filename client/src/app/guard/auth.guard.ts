@@ -22,12 +22,13 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
+    console.log(this.userService.token);
     if (this.userService.isAuthenticated()) {
       console.log('user is authenticated');
-      this.router.navigate(['all-surveys']);
       return true;
     }
     console.error('user is not authenticated');
+    this.router.navigate(['']);
     return false;
   }
 }
