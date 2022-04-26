@@ -1,12 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ConstantsService } from './constants.service';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient, private constants: ConstantsService) {}
+  constructor(
+    private http: HttpClient,
+    private constants: ConstantsService,
+    private userService: UserService
+  ) {}
   signIn(username: string, password: string) {
     this.http
       .post(this.constants.signInUrl, {
@@ -14,7 +19,12 @@ export class AuthService {
         password,
       })
       .subscribe(
-        (value) => console.log(value),
+        (value: any) => {
+          console.log(value);
+          console.log(value['access_token']);
+          const token = value['access_token'];
+          this.userService.setToken(token);
+        },
         (warn) => console.warn(warn)
       );
   }
