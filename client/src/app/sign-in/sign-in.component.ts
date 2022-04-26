@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -8,7 +9,11 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./sign-in.component.css'],
 })
 export class SignInComponent implements OnInit {
-  constructor(private fb: FormBuilder, private authService: AuthService) {}
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   signInForm = this.fb.group({ username: [''], password: [''] });
 
@@ -16,5 +21,6 @@ export class SignInComponent implements OnInit {
   signIn() {
     const { username, password } = this.signInForm.value;
     this.authService.signIn(username, password);
+    this.router.navigate(['my-surveys']);
   }
 }
