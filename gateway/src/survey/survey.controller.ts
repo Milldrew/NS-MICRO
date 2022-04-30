@@ -26,7 +26,7 @@ export class SurveyController {
     console.log('FROM CREATE hello');
     console.table(req.user);
     console.table(createSurveyDto);
-    //return this.surveyService.create(req.user.userId, createSurveyDto);
+    return this.surveyService.create(req.user.userId, createSurveyDto);
   }
 
   @UseGuards(JwtAuthGuard)

@@ -12,10 +12,11 @@ export class SurveyService {
   async create(userId: number, createSurveyDto: CreateSurveyDto) {
     console.log('CREATE SERVICE', userId);
     console.log(userId, 'userid');
+    console.log(createSurveyDto, 'dto');
     return await this.client
       .send<CreateSurveyDto>(
         { cmd: 'createSurvey' },
-        { userId, ...createSurveyDto },
+        { authorId: userId, ...createSurveyDto },
       )
       .toPromise();
   }
