@@ -1,0 +1,4 @@
+HEADER="Authorization: Bearer "$1
+echo $HEADER
+curl -d '{ "question": "What do you like?", "answers": ["food", "water","exercise"]}' -H "Content-Type: application/json" 'http://localhost:3000/survey/'  -H "$HEADER"
+

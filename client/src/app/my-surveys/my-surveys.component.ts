@@ -15,6 +15,8 @@ export class MySurveysComponent implements OnInit {
   }
   ngOnInit(): void {
     this.getSurveys.getAllMySurveys().subscribe((surveys: any): void => {
+      console.log('hello from all my');
+      console.log(surveys);
       this.mySurveys = surveys;
     });
   }

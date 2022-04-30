@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { ConstantsService } from './constants.service';
 import { UserService } from './user.service';
 
@@ -8,6 +9,7 @@ import { UserService } from './user.service';
 })
 export class AuthService {
   constructor(
+    private router: Router,
     private http: HttpClient,
     private constants: ConstantsService,
     private userService: UserService
@@ -24,6 +26,7 @@ export class AuthService {
           console.log(value['access_token']);
           const token = value['access_token'];
           this.userService.setToken(token);
+          this.router.navigate(['my-surveys']);
         },
         (warn) => console.warn(warn)
       );

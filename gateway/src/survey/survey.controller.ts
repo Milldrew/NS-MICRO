@@ -20,17 +20,20 @@ import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 export class SurveyController {
   constructor(private readonly surveyService: SurveyService) {}
 
+  @UseGuards(JwtAuthGuard)
   @Post()
-  create(@Body() createSurveyDto: CreateSurveyDto) {
-    console.log('hi from create survey');
-    return this.surveyService.create(createSurveyDto);
+  create(@Request() req, @Body() createSurveyDto: CreateSurveyDto) {
+    console.log('FROM CREATE hello');
+    console.table(req.user);
+    console.table(createSurveyDto);
+    //return this.surveyService.create(req.user.userId, createSurveyDto);
   }
 
   @UseGuards(JwtAuthGuard)
   @Get('my')
   findAllMy(@Request() req) {
-    console.log(req.user);
-    return this.surveyService.findAllMy();
+    console.log(req.user, 'from controller');
+    return this.surveyService.findAllMy(req.user.userId);
   }
 
   @Get()

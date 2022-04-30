@@ -14,6 +14,7 @@ export class SurveyService {
   create(createSurveyDto: CreateSurveyDto) {
     console.log('hello from create AGAIN');
     const survey = this.surveyRepo.create(createSurveyDto);
+    console.log(survey);
     return this.surveyRepo.save(survey);
   }
 

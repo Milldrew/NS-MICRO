@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -10,6 +11,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class SignInComponent implements OnInit {
   constructor(
+    private userService: UserService,
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router
@@ -20,7 +22,7 @@ export class SignInComponent implements OnInit {
   ngOnInit(): void {}
   signIn() {
     const { username, password } = this.signInForm.value;
+    this.userService.setUsername(username);
     this.authService.signIn(username, password);
-    this.router.navigate(['my-surveys']);
   }
 }

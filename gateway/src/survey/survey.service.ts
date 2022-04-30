@@ -9,19 +9,22 @@ import { firstValueFrom } from 'rxjs';
 export class SurveyService {
   constructor(@Inject('SURVEY_SERVICE') private client: ClientProxy) {}
 
-  async create(createSurveyDto: CreateSurveyDto) {
+  async create(userId: number, createSurveyDto: CreateSurveyDto) {
+    console.log('CREATE SERVICE', userId);
+    console.log(userId, 'userid');
     return await this.client
-      .send<CreateSurveyDto>({ cmd: 'createSurvey' }, createSurveyDto)
+      .send<CreateSurveyDto>(
+        { cmd: 'createSurvey' },
+        { userId, ...createSurveyDto },
+      )
       .toPromise();
   }
 
-  findAllMy() {
-    return firstValueFrom(
-      this.client.send<any>({ cmd: 'findAllMy' }, 'findAll'),
-    );
+  findAllMy(id: number) {
+    console.log({ id }, 'from survey service');
+    return firstValueFrom(this.client.send<any>({ cmd: 'findAllMy' }, id));
   }
   findAll(paginationQueryDto: PaginationQueryDto) {
-    console.log('hi');
     return this.client.send<any>({ cmd: 'findAll' }, paginationQueryDto);
   }
 

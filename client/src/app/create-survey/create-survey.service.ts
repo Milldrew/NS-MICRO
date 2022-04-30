@@ -4,8 +4,6 @@ import { SurveyFeedService } from '../news-feed/services/survey-feed.service';
 import { ConstantsService } from '../services/constants.service';
 
 type CreateSurveyDto = {
-  authorId: number;
-  name: string;
   question: string;
   answers: string[];
 };
@@ -22,12 +20,14 @@ export class CreateSurveyService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
   addSurvey(createSurveyDto: CreateSurveyDto) {
-    console.log(this.constants.surveyUrl);
-    console.log(createSurveyDto);
+    console.log(createSurveyDto, 'create survey dto');
+    console.log(this.constants.surveyUrl, 'survey url');
+    console.log(this.constants.httpAuthHeader());
+
     return this.http.post<CreateSurveyDto>(
       this.constants.surveyUrl,
       createSurveyDto,
-      this.httpOptions
+      this.constants.httpAuthHeader()
     );
   }
 }
